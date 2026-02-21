@@ -1,19 +1,25 @@
+/* Dark minimal palette */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 :root{
-  --bg:#ffffff;
-  --fg:#0f172a;
-  --muted:#475569;
-  --line:#e2e8f0;
-  --card:#f8fafc;
-  --shadow: 0 10px 24px rgba(2,6,23,.10);
+  --bg:#0b1220;
+  --fg:#e2e8f0;
+  --muted:#94a3b8;
+  --line:#1e293b;
+  --card:#111827;
+  --accent:#38bdf8;
+  --shadow: 0 14px 28px rgba(0,0,0,.25);
 }
 
 *{ box-sizing:border-box; }
 body{
   margin:0;
   padding:0 56px;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family:'Space Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   color:var(--fg);
-  background:var(--bg);
+  background:radial-gradient(circle at 20% 20%, rgba(56,189,248,0.06), transparent 32%),
+             radial-gradient(circle at 80% 10%, rgba(94,234,212,0.08), transparent 32%),
+             var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 a{ color:inherit; }
@@ -25,20 +31,38 @@ a{ color:inherit; }
   align-items:baseline;
   gap:20px;
 }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
 .name{
   font-size:44px;
-  font-weight:800;
-  letter-spacing:-0.02em;
+  font-family:'Space Mono', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:400;
+  letter-spacing:0.01em;
+  text-transform:uppercase;
+}
+.avatar{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  object-fit:cover;
+  object-position:50% 35%;
+  background:var(--card);
 }
 .nav a{
   margin-left:22px;
   text-decoration:none;
-  color:var(--fg);
+  color:var(--muted);
   font-size:16px;
 }
 .nav a.active{
-  text-decoration: underline;
-  text-underline-offset: 6px;
+  color:var(--fg);
+  text-decoration:underline;
+  text-underline-offset:6px;
+  text-decoration-color:var(--accent);
 }
 .divider{
   border:none;
@@ -63,7 +87,7 @@ a{ color:inherit; }
   object-fit:cover;
   border:1px solid var(--line);
   background:var(--card);
-  transition: transform .14s ease, box-shadow .14s ease;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 .label{
   text-align:center;
@@ -73,8 +97,9 @@ a{ color:inherit; }
 }
 
 .card:hover .thumb{
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow);
+  border-color:var(--accent);
 }
 
 .footer{
