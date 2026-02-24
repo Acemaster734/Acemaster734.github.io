@@ -75,6 +75,15 @@ a{
   text-underline-offset:6px;
   text-decoration-color:var(--accent);
 }
+.back-link{
+  display:inline-block;
+  color:var(--muted);
+  transition: color .16s ease, transform .16s ease;
+}
+.back-link:hover{
+  color:var(--accent);
+  transform: scale(1.06);
+}
 .divider{
   border:none;
   border-top:1px solid var(--line);
@@ -114,6 +123,10 @@ a{
   border:1px solid var(--line);
   background:var(--card);
 }
+.project-lightbox-trigger{
+  display:block;
+  cursor:zoom-in;
+}
 .label{
   text-align:left;
   margin-top:0;
@@ -152,7 +165,7 @@ a{
   max-width:980px;
   border:1px solid var(--line);
   background:var(--card);
-  padding:24px;
+  padding:20px 24px 24px;
 }
 .resume-name{
   margin:0;
@@ -160,7 +173,7 @@ a{
   font-weight:400;
 }
 .resume-contact{
-  margin:8px 0 20px;
+  margin:0 0 18px;
   color:var(--muted);
 }
 .resume-section{
